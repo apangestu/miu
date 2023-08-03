@@ -10,6 +10,8 @@
             background-image: url("ayam.jpg"); /* Ganti dengan path gambar yang diinginkan */
             background-size: cover;
             background-position: center;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -21,9 +23,9 @@
         }
 
         .box {
-            width: 90%;
-            max-width: 800px;
-            height: auto;
+            width: 80%; /* Menggunakan persentase untuk lebar agar responsif */
+            max-width: 800px; /* Tambahkan batas lebar maksimum */
+            height: 400px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -46,20 +48,23 @@
         }
 
         .gif-container {
-            width: 60%;
-            max-width: 230px;
-            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70%; /* Menggunakan persentase untuk lebar agar responsif */
+            max-width: 230px; /* Tambahkan batas lebar maksimum */
+            height: 230px;
             margin: auto;
-            margin-top: 20px; /* Sesuaikan jarak dari atas sesuai kebutuhan */
+            margin-top: 40px; /* Sesuaikan jarak dari atas sesuai kebutuhan */
         }
 
         .message-container {
             position: absolute;
-            bottom: 50px;
+            bottom: 5%;
             left: 0;
             right: 0;
             text-align: center;
-            font-size: 16px; /* Sesuaikan ukuran teks sesuai kebutuhan */
+            font-size: 18px; /* Sesuaikan ukuran teks sesuai kebutuhan */
             font-weight: bold;
             color: #333;
             opacity: 0;
@@ -73,19 +78,34 @@
             padding: 10px 20px;
             background-color: #fff;
             color: orange;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
         }
 
         .start-button-container {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         @keyframes fade {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+
+        /* Responsif pada perangkat dengan lebar maksimum 768px */
+        @media screen and (max-width: 768px) {
+            .box {
+                width: 90%;
+            }
+
+            .gif-container {
+                width: 80%;
+            }
+            
+            .message-container {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -93,7 +113,7 @@
     <div class="container">
         <div class="box">
             <div class="gif-container">
-                <img id="gif" src="path_to_your_gif.gif" alt="Birthday GIF" style="width: 100%; height: auto;">
+                <img id="gif" src="path_to_your_gif.gif" alt="Birthday GIF" style="width: 100%;">
             </div>
             <div class="message-container">
                 <div id="message"></div>
